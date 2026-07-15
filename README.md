@@ -33,9 +33,3 @@ Each pet folder contains:
 - `contact-sheet.png`: the full animation contact sheet.
 - `look-directions.png`: the v2 look-direction QA sheet.
 - `validation.json`: the latest v2 atlas validation result.
-
-## Notes
-
-Please keep redistributed pets personal and non-commercial. Do not use these assets to imply official endorsement, sponsorship, or affiliation.
-
-If you are a rights holder and have concerns, please open an issue and I will review or remove the material promptly.
