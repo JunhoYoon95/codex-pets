@@ -2,7 +2,7 @@
 
 A personal collection of unofficial custom pets for Codex.
 
-These pets are fan-made and intended for personal, non-commercial use. This repository is not affiliated with, endorsed by, or sponsored by OpenAI, Codex, any athlete, team, brand, league, or other rights holder.
+These pets are fan-made and intended for personal, non-commercial use.
 
 ## Pets
 
