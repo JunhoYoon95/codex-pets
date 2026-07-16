@@ -10,6 +10,7 @@ These pets are fan-made and intended for personal, non-commercial use.
 | --- | --- | --- |
 | [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | A white no.7 football celebration pet with a rear-view idle and hover celebration. |
 | [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | A white and navy no.7 football pet with a camera-click idle celebration and gold boot hover poses. |
+| [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | A blue-red no.10 football pet with a shirt-display idle and era-shifting sky-point hover celebration. |
 
 ## Install
 
@@ -21,6 +22,7 @@ To install a pet from this repository:
 mkdir -p ~/.codex/pets
 cp -R pets/white-no7-celebration ~/.codex/pets/
 cp -R pets/white-navy-no7-golden-boot ~/.codex/pets/
+cp -R pets/blue-red-no10-era-shift ~/.codex/pets/
 ```
 
 Then restart Codex or open a new Codex window so the pet list refreshes.
