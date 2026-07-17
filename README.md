@@ -13,6 +13,7 @@ These pets are fan-made and intended for personal, non-commercial use.
 | [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | A blue-red no.10 football pet with a shirt-display idle and era-shifting sky-point hover celebration. |
 | [Long Beach Legend](./pets/long-beach-legend) | ![Long Beach Legend preview](./pets/long-beach-legend/preview.gif) | A relaxed West Coast rapper-inspired pet with braids, black shades, a gold chain, and smoke-ring hover poses. |
 | [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | A mature MMA fighter-inspired pet with bold tattoos, green fight shorts, a static standing idle, and flex hover poses. |
+| [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | A football-forward-inspired pet with national, blue-red club, and white club kit moments, trophy hover poses, and celebration animations. |
 
 ## Install
 
@@ -27,6 +28,7 @@ cp -R pets/white-navy-no7-golden-boot ~/.codex/pets/
 cp -R pets/blue-red-no10-era-shift ~/.codex/pets/
 cp -R pets/long-beach-legend ~/.codex/pets/
 cp -R pets/green-cage-fighter ~/.codex/pets/
+cp -R pets/trophy-striker-v2 ~/.codex/pets/
 ```
 
 Then restart Codex or open a new Codex window so the pet list refreshes.
