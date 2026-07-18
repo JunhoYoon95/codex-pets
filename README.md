@@ -15,6 +15,7 @@ These pets are fan-made and intended for personal, non-commercial use.
 | [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | A mature MMA fighter-inspired pet with bold tattoos, green fight shorts, a static standing idle, and flex hover poses. |
 | [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | A football-forward-inspired pet with national, blue-red club, and white club kit moments, trophy hover poses, and celebration animations. |
 | [Sky Blue No.9 Zen Slide](./pets/sky-blue-no9-zen-slide) | ![Sky Blue No.9 Zen Slide preview](./pets/sky-blue-no9-zen-slide/preview.gif) | A sky-blue no.9 striker-inspired pet with a standing idle, dynamic hover poses, and sliding zen celebration states. |
+| [Yellow Green Forward](./pets/yellow-green-forward) | ![Yellow Green Forward preview](./pets/yellow-green-forward/preview.gif) | A yellow-green national-kit football pet with a standing idle, rainbow-flick hover poses, and a hands-near-head celebration state. |
 
 ## Install
 
@@ -31,6 +32,7 @@ cp -R pets/long-beach-legend ~/.codex/pets/
 cp -R pets/green-cage-fighter ~/.codex/pets/
 cp -R pets/trophy-striker-v2 ~/.codex/pets/
 cp -R pets/sky-blue-no9-zen-slide ~/.codex/pets/
+cp -R pets/yellow-green-forward ~/.codex/pets/
 ```
 
 Then restart Codex or open a new Codex window so the pet list refreshes.
