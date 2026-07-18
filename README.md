@@ -11,39 +11,41 @@ Pick a pet, install it, and let it keep you company while Codex works. No coding
 
 ## Choose your pet
 
-Click **Install** next to a pet. Your browser may ask for permission to open Codex.
+Click **Install** next to a pet. A review page will open first; Codex opens only after you press **Open in Codex**.
 
 | Pet | Preview | Install |
 | --- | --- | :---: |
-| [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | [Install in Codex](codex://pets/install?name=No.7%20Celebration&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fwhite-no7-celebration%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | [Install in Codex](codex://pets/install?name=White%20Navy%20No.7&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fwhite-navy-no7-golden-boot%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | [Install in Codex](codex://pets/install?name=Blue%20Red%20No.10&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fblue-red-no10-era-shift%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Long Beach Legend](./pets/long-beach-legend) | ![Long Beach Legend preview](./pets/long-beach-legend/preview.gif) | [Install in Codex](codex://pets/install?name=Long%20Beach%20Legend&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Flong-beach-legend%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | [Install in Codex](codex://pets/install?name=Green%20Cage%20Fighter&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fgreen-cage-fighter%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | [Install in Codex](codex://pets/install?name=Trophy%20Striker%20V2&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Ftrophy-striker-v2%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Sky Blue No.9 Zen Slide](./pets/sky-blue-no9-zen-slide) | ![Sky Blue No.9 Zen Slide preview](./pets/sky-blue-no9-zen-slide/preview.gif) | [Install in Codex](codex://pets/install?name=Sky%20Blue%20No.9%20Zen%20Slide&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fsky-blue-no9-zen-slide%2Fspritesheet.webp&spriteVersionNumber=2) |
-| [Yellow Green Forward](./pets/yellow-green-forward) | ![Yellow Green Forward preview](./pets/yellow-green-forward/preview.gif) | [Install in Codex](codex://pets/install?name=Yellow%20Green%20Forward&imageUrl=https%3A%2F%2Fraw.githubusercontent.com%2FJunhoYoon95%2Fcodex-pets%2Fmain%2Fpets%2Fyellow-green-forward%2Fspritesheet.webp&spriteVersionNumber=2) |
+| [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-no7-celebration) |
+| [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-navy-no7-golden-boot) |
+| [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=blue-red-no10-era-shift) |
+| [Long Beach Legend](./pets/long-beach-legend) | ![Long Beach Legend preview](./pets/long-beach-legend/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=long-beach-legend) |
+| [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=green-cage-fighter) |
+| [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=trophy-striker-v2) |
+| [Sky Blue No.9 Zen Slide](./pets/sky-blue-no9-zen-slide) | ![Sky Blue No.9 Zen Slide preview](./pets/sky-blue-no9-zen-slide/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=sky-blue-no9-zen-slide) |
+| [Yellow Green Forward](./pets/yellow-green-forward) | ![Yellow Green Forward preview](./pets/yellow-green-forward/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=yellow-green-forward) |
 
 ## Quick start
 
 1. Click **Install in Codex** next to the pet you want.
-2. Allow your browser to open Codex, then confirm the installation.
-3. In Codex, open your profile menu and select **Pets**. You can also open **Settings > Pets**.
-4. Select your new pet.
-5. Type `/pet` in a chat, or open the command menu and select **Wake Pet**.
+2. Review the pet on the install page and press **Open in Codex**.
+3. Allow your browser to open Codex, then confirm the installation.
+4. In Codex, open your profile menu and select **Pets**. You can also open **Settings > Pets**.
+5. Select your new pet.
+6. Type `/pet` in a chat, or open the command menu and select **Wake Pet**.
 
 Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
 > [!TIP]
-> If the install link does not open, use the manual installation steps below. Some browsers and GitHub clients block app links such as `codex://`.
+> The review page never opens Codex automatically. If its **Open in Codex** button does not work, use the manual installation steps below.
 
 ## 한국어 빠른 설치
 
 1. 위 목록에서 원하는 펫의 **Install in Codex**를 누릅니다.
-2. 브라우저에 Codex를 열겠다는 안내가 나오면 허용한 뒤 설치를 확인합니다.
-3. Codex의 프로필 메뉴에서 **Pets**를 열거나 **Settings > Pets**로 이동합니다.
-4. 설치한 펫을 선택합니다.
-5. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
+2. 설치 확인 페이지에서 펫을 확인하고 **Open in Codex**를 누릅니다.
+3. 브라우저에 Codex를 열겠다는 안내가 나오면 허용한 뒤 설치를 확인합니다.
+4. Codex의 프로필 메뉴에서 **Pets**를 열거나 **Settings > Pets**로 이동합니다.
+5. 설치한 펫을 선택합니다.
+6. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
 
 설치 링크가 열리지 않으면 아래의 [수동 설치](#manual-installation)를 이용하세요. 터미널이나 개발 지식 없이도 ZIP 파일을 내려받아 설치할 수 있습니다.
 
