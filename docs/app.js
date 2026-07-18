@@ -101,9 +101,9 @@ function renderHome(errorMessage) {
 
     const body = element("div", "pet-card-body");
     const heading = element("h2", "", pet.name);
-    const link = element("a", "card-link", "Review & install");
+    const link = element("a", "card-link", "Review & download");
     link.href = `?pet=${encodeURIComponent(pet.id)}`;
-    link.setAttribute("aria-label", `Review and install ${pet.name}`);
+    link.setAttribute("aria-label", `Review and download ${pet.name}`);
     body.append(heading, link);
     card.append(image, body);
     grid.append(card);
@@ -126,43 +126,39 @@ function renderInstaller(pet) {
   preview.append(image);
 
   const content = element("div", "installer-content");
-  const eyebrow = element("p", "eyebrow", "Review before installing");
+  const eyebrow = element("p", "eyebrow", "Review before downloading");
   const heading = element("h1", "", pet.name);
   const description = element("p", "description", pet.description);
-  const safety = element("p", "safety-note", "Nothing launches automatically. The button below asks Codex to install this repository's registered v2 spritesheet; your browser and Codex may ask you to confirm.");
+  const safety = element("p", "safety-note", "Direct installation is not enabled in every Codex app, account, or workspace. Downloading the ZIP always works, but you must copy the selected pet folder into your Codex pets folder.");
 
   const actions = element("div", "actions");
-  const install = element("a", "primary-button", "Open in Codex");
-  install.href = installUrl(pet);
-  install.setAttribute("aria-label", `Open Codex to install ${pet.name}`);
+  const download = element("a", "primary-button", "Download pet files (.zip)");
+  download.href = `${repository}/archive/refs/heads/main.zip`;
+  download.setAttribute("aria-label", `Download the repository ZIP containing ${pet.name}`);
 
-  const back = element("a", "secondary-button", "Choose another pet");
+  const install = element("a", "secondary-button", "Try one-click install");
+  install.href = installUrl(pet);
+  install.setAttribute("aria-label", `Try opening Codex to install ${pet.name}; limited availability`);
+
+  const back = element("a", "text-link", "Choose another pet");
   back.href = "./";
 
-  const manual = element("a", "text-link", "Manual installation help");
+  const manual = element("a", "text-link", "How to install the downloaded ZIP");
   manual.href = `${repository}#manual-installation`;
 
   const afterLaunch = element("section", "after-launch");
-  afterLaunch.hidden = true;
   afterLaunch.setAttribute("aria-live", "polite");
-  const fallbackTitle = element("h2", "", "Codex opened, but no install dialog?");
-  const fallbackText = element("p", "", "Shared pet installation is not enabled for every app version, account, or workspace yet. The website cannot override that app setting. You can still install the pet from the repository ZIP.");
+  const fallbackTitle = element("h2", "", "Did Codex open without installing?");
+  const fallbackText = element("p", "", "That means shared pet installation is not enabled for your app or account. Opening Codex does not download anything in that case, and this website cannot override the app setting. Use the ZIP download and the step-by-step instructions instead.");
   const fallbackLinks = element("div", "fallback-links");
-  const download = element("a", "text-link", "Download repository ZIP");
-  download.href = `${repository}/archive/refs/heads/main.zip`;
   const instructions = element("a", "text-link", "Open step-by-step instructions");
   instructions.href = `${repository}#manual-installation`;
-  fallbackLinks.append(download, instructions);
+  fallbackLinks.append(instructions);
   afterLaunch.append(fallbackTitle, fallbackText, fallbackLinks);
 
-  install.addEventListener("click", () => {
-    window.setTimeout(() => {
-      afterLaunch.hidden = false;
-    }, 700);
-  });
-
-  actions.append(install, back);
+  actions.append(download, install);
   content.append(eyebrow, heading, description, safety, actions, manual, afterLaunch);
+  content.append(back);
   section.append(preview, content);
   app.replaceChildren(section);
   document.title = `${pet.name} — Codex Pets`;

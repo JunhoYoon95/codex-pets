@@ -2,19 +2,19 @@
 
 Unofficial, fan-made animated companions for the Codex app and Codex CLI.
 
-Pick a pet, install it, and let it keep you company while Codex works. No coding is required.
+Pick a pet, download it, and let it keep you company while Codex works. No coding is required.
 
 [한국어 설치 안내](#한국어-빠른-설치) · [Manual installation](#manual-installation) · [Troubleshooting](#troubleshooting)
 
 > [!IMPORTANT]
 > You need a version of the Codex/ChatGPT desktop app that includes **Settings > Pets**. Pet availability can depend on your app version, account, or workspace.
-> One-click shared pet installation is also a separately enabled feature. If Codex opens without an install dialog, use the manual installation option.
+> One-click shared pet installation is also a separately enabled feature. On unsupported accounts, the link only opens Codex and downloads nothing. Use the ZIP installation option instead.
 
 ## Choose your pet
 
-Click **Install** next to a pet. A review page will open first; Codex opens only after you press **Open in Codex**. If shared pet installation is not enabled for your app or account, the page provides a reliable ZIP fallback.
+Open a pet's download page and choose **Download pet files (.zip)**. The optional **Try one-click install** button works only when shared pet installation is enabled for your Codex app and account.
 
-| Pet | Preview | Install |
+| Pet | Preview | Download |
 | --- | --- | :---: |
 | [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-no7-celebration) |
 | [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-navy-no7-golden-boot) |
@@ -27,28 +27,28 @@ Click **Install** next to a pet. A review page will open first; Codex opens only
 
 ## Quick start
 
-1. Click **Install in Codex** next to the pet you want.
-2. Review the pet on the install page and press **Open in Codex**.
-3. Allow your browser to open Codex, then confirm the installation.
-4. In Codex, open your profile menu and select **Pets**. You can also open **Settings > Pets**.
+1. Click **Install in Codex** next to the pet you want to open its download page.
+2. Press **Download pet files (.zip)**.
+3. Follow the [manual installation steps](#manual-installation) to copy the selected pet folder into the Codex pets directory.
+4. Restart Codex, then open your profile menu and select **Pets**. You can also open **Settings > Pets**.
 5. Select your new pet.
 6. Type `/pet` in a chat, or open the command menu and select **Wake Pet**.
 
 Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
 > [!TIP]
-> The review page never opens Codex automatically. If its **Open in Codex** button does not work, use the manual installation steps below.
+> **Try one-click install** is optional and has limited availability. If it only opens Codex, nothing was downloaded or installed; use the ZIP steps below.
 
 ## 한국어 빠른 설치
 
-1. 위 목록에서 원하는 펫의 **Install in Codex**를 누릅니다.
-2. 설치 확인 페이지에서 펫을 확인하고 **Open in Codex**를 누릅니다.
-3. 브라우저에 Codex를 열겠다는 안내가 나오면 허용한 뒤 설치를 확인합니다.
-4. Codex의 프로필 메뉴에서 **Pets**를 열거나 **Settings > Pets**로 이동합니다.
+1. 위 목록에서 원하는 펫의 **Install in Codex**를 눌러 다운로드 페이지를 엽니다.
+2. **Download pet files (.zip)**을 눌러 ZIP 파일을 받습니다.
+3. 아래의 [수동 설치](#manual-installation) 안내에 따라 원하는 펫 폴더를 Codex의 `pets` 폴더로 복사합니다.
+4. Codex를 재시작한 다음 프로필 메뉴의 **Pets** 또는 **Settings > Pets**로 이동합니다.
 5. 설치한 펫을 선택합니다.
 6. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
 
-설치 링크가 열리지 않으면 아래의 [수동 설치](#manual-installation)를 이용하세요. 터미널이나 개발 지식 없이도 ZIP 파일을 내려받아 설치할 수 있습니다.
+**Try one-click install**을 눌렀을 때 Codex만 열리고 설치 창이 나타나지 않으면 아무 파일도 다운로드되거나 설치되지 않은 것입니다. 아래의 [수동 설치](#manual-installation)를 이용하세요. 터미널이나 개발 지식 없이도 ZIP 파일을 내려받아 설치할 수 있습니다.
 
 ## Manual installation
 
