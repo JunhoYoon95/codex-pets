@@ -16,18 +16,18 @@ Open a pet's download page and choose **Download pet files (.zip)**. The optiona
 
 | Pet | Preview | Download |
 | --- | --- | :---: |
-| [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-no7-celebration) |
-| [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=white-navy-no7-golden-boot) |
-| [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=blue-red-no10-era-shift) |
-| [Long Beach Legend](./pets/long-beach-legend) | ![Long Beach Legend preview](./pets/long-beach-legend/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=long-beach-legend) |
-| [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=green-cage-fighter) |
-| [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=trophy-striker-v2) |
-| [Sky Blue No.9 Zen Slide](./pets/sky-blue-no9-zen-slide) | ![Sky Blue No.9 Zen Slide preview](./pets/sky-blue-no9-zen-slide/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=sky-blue-no9-zen-slide) |
-| [Yellow Green Forward](./pets/yellow-green-forward) | ![Yellow Green Forward preview](./pets/yellow-green-forward/preview.gif) | [Install in Codex](https://junhoyoon95.github.io/codex-pets/?pet=yellow-green-forward) |
+| [No.7 Celebration](./pets/white-no7-celebration) | ![No.7 Celebration preview](./pets/white-no7-celebration/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=white-no7-celebration) |
+| [White Navy No.7](./pets/white-navy-no7-golden-boot) | ![White Navy No.7 preview](./pets/white-navy-no7-golden-boot/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=white-navy-no7-golden-boot) |
+| [Blue Red No.10](./pets/blue-red-no10-era-shift) | ![Blue Red No.10 preview](./pets/blue-red-no10-era-shift/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=blue-red-no10-era-shift) |
+| [Long Beach Legend](./pets/long-beach-legend) | ![Long Beach Legend preview](./pets/long-beach-legend/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=long-beach-legend) |
+| [Green Cage Fighter](./pets/green-cage-fighter) | ![Green Cage Fighter preview](./pets/green-cage-fighter/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=green-cage-fighter) |
+| [Trophy Striker V2](./pets/trophy-striker-v2) | ![Trophy Striker V2 preview](./pets/trophy-striker-v2/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=trophy-striker-v2) |
+| [Sky Blue No.9 Zen Slide](./pets/sky-blue-no9-zen-slide) | ![Sky Blue No.9 Zen Slide preview](./pets/sky-blue-no9-zen-slide/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=sky-blue-no9-zen-slide) |
+| [Yellow Green Forward](./pets/yellow-green-forward) | ![Yellow Green Forward preview](./pets/yellow-green-forward/preview.gif) | [Download / install](https://junhoyoon95.github.io/codex-pets/?pet=yellow-green-forward) |
 
 ## Quick start
 
-1. Click **Install in Codex** next to the pet you want to open its download page.
+1. Click **Download / install** next to the pet you want.
 2. Press **Download pet files (.zip)**.
 3. Follow the [manual installation steps](#manual-installation) to copy the selected pet folder into the Codex pets directory.
 4. Restart Codex, then open your profile menu and select **Pets**. You can also open **Settings > Pets**.
@@ -41,7 +41,7 @@ Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
 ## 한국어 빠른 설치
 
-1. 위 목록에서 원하는 펫의 **Install in Codex**를 눌러 다운로드 페이지를 엽니다.
+1. 위 목록에서 원하는 펫의 **Download / install**을 눌러 다운로드 페이지를 엽니다.
 2. **Download pet files (.zip)**을 눌러 ZIP 파일을 받습니다.
 3. 아래의 [수동 설치](#manual-installation) 안내에 따라 원하는 펫 폴더를 Codex의 `pets` 폴더로 복사합니다.
 4. Codex를 재시작한 다음 프로필 메뉴의 **Pets** 또는 **Settings > Pets**로 이동합니다.
