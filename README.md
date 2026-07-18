@@ -8,11 +8,10 @@ Pick a pet, download it, and let it keep you company while Codex works. No codin
 
 > [!IMPORTANT]
 > You need a version of the Codex/ChatGPT desktop app that includes **Settings > Pets**. Pet availability can depend on your app version, account, or workspace.
-> One-click shared pet installation is also a separately enabled feature. On unsupported accounts, the link only opens Codex and downloads nothing. Use the ZIP installation option instead.
 
 ## Choose your pet
 
-Open a pet's download page and choose **Download pet files (.zip)**. The optional **Try one-click install** button works only when shared pet installation is enabled for your Codex app and account.
+Open a pet's download page and choose **Download pet files (.zip)**. Then copy the selected pet folder into your Codex pets directory by following the instructions below.
 
 | Pet | Preview | Download |
 | --- | --- | :---: |
@@ -37,7 +36,7 @@ Open a pet's download page and choose **Download pet files (.zip)**. The optiona
 Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
 > [!TIP]
-> **Try one-click install** is optional and has limited availability. If it only opens Codex, nothing was downloaded or installed; use the ZIP steps below.
+> The ZIP contains every published pet, so you only need to copy the folder for the pet you want.
 
 ## 한국어 빠른 설치
 
@@ -48,7 +47,7 @@ Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 5. 설치한 펫을 선택합니다.
 6. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
 
-**Try one-click install**을 눌렀을 때 Codex만 열리고 설치 창이 나타나지 않으면 아무 파일도 다운로드되거나 설치되지 않은 것입니다. 아래의 [수동 설치](#manual-installation)를 이용하세요. 터미널이나 개발 지식 없이도 ZIP 파일을 내려받아 설치할 수 있습니다.
+ZIP에는 공개된 모든 펫이 들어 있습니다. 아래의 [수동 설치](#manual-installation) 안내에 따라 원하는 펫 폴더 하나만 복사하면 됩니다. 터미널이나 개발 지식은 필요하지 않습니다.
 
 ## Manual installation
 
@@ -144,7 +143,7 @@ This is expected. Use the Codex desktop app or a supported Codex CLI terminal. S
 | File | Purpose |
 | --- | --- |
 | `pet.json` | Name, description, sprite version, and spritesheet path used by Codex. |
-| `spritesheet.webp` | The Codex v2 animated spritesheet. This is the file installed by the one-click link. |
+| `spritesheet.webp` | The Codex v2 animated spritesheet used by the pet. |
 | `preview.gif` | A lightweight animated preview for GitHub. |
 | `contact-sheet.png` | A full animation contact sheet for inspection. |
 | `look-directions.png` | A QA sheet for v2 look directions. |

@@ -54,12 +54,6 @@ function petAsset(pet, filename) {
   return `${rawRoot}/${pet.id}/${filename}`;
 }
 
-function installUrl(pet) {
-  const name = encodeURIComponent(pet.name);
-  const imageUrl = encodeURIComponent(petAsset(pet, "spritesheet.webp"));
-  return `codex://pets/install?name=${name}&imageUrl=${imageUrl}&spriteVersionNumber=2`;
-}
-
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -129,16 +123,12 @@ function renderInstaller(pet) {
   const eyebrow = element("p", "eyebrow", "Review before downloading");
   const heading = element("h1", "", pet.name);
   const description = element("p", "description", pet.description);
-  const safety = element("p", "safety-note", "Direct installation is not enabled in every Codex app, account, or workspace. Downloading the ZIP always works, but you must copy the selected pet folder into your Codex pets folder.");
+  const safety = element("p", "safety-note", `The ZIP contains every published pet. After downloading it, copy the pets/${pet.id} folder into your Codex pets folder, then restart Codex.`);
 
   const actions = element("div", "actions");
   const download = element("a", "primary-button", "Download pet files (.zip)");
   download.href = `${repository}/archive/refs/heads/main.zip`;
   download.setAttribute("aria-label", `Download the repository ZIP containing ${pet.name}`);
-
-  const install = element("a", "secondary-button", "Try one-click install");
-  install.href = installUrl(pet);
-  install.setAttribute("aria-label", `Try opening Codex to install ${pet.name}; limited availability`);
 
   const back = element("a", "text-link", "Choose another pet");
   back.href = "./";
@@ -146,18 +136,8 @@ function renderInstaller(pet) {
   const manual = element("a", "text-link", "How to install the downloaded ZIP");
   manual.href = `${repository}#manual-installation`;
 
-  const afterLaunch = element("section", "after-launch");
-  afterLaunch.setAttribute("aria-live", "polite");
-  const fallbackTitle = element("h2", "", "Did Codex open without installing?");
-  const fallbackText = element("p", "", "That means shared pet installation is not enabled for your app or account. Opening Codex does not download anything in that case, and this website cannot override the app setting. Use the ZIP download and the step-by-step instructions instead.");
-  const fallbackLinks = element("div", "fallback-links");
-  const instructions = element("a", "text-link", "Open step-by-step instructions");
-  instructions.href = `${repository}#manual-installation`;
-  fallbackLinks.append(instructions);
-  afterLaunch.append(fallbackTitle, fallbackText, fallbackLinks);
-
-  actions.append(download, install);
-  content.append(eyebrow, heading, description, safety, actions, manual, afterLaunch);
+  actions.append(download);
+  content.append(eyebrow, heading, description, safety, actions, manual);
   content.append(back);
   section.append(preview, content);
   app.replaceChildren(section);
