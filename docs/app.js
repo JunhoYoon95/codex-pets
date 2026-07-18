@@ -61,6 +61,66 @@ function element(tag, className, text) {
   return node;
 }
 
+async function fetchPetFile(pet, filename) {
+  const response = await fetch(petAsset(pet, filename));
+  if (!response.ok) {
+    throw new Error(`Unable to download ${filename}`);
+  }
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  if (bytes.length === 0 || bytes.length > 20 * 1024 * 1024) {
+    throw new Error(`${filename} has an invalid size`);
+  }
+  return bytes;
+}
+
+function validWebp(bytes) {
+  return bytes.length >= 12
+    && String.fromCharCode(...bytes.slice(0, 4)) === "RIFF"
+    && String.fromCharCode(...bytes.slice(8, 12)) === "WEBP";
+}
+
+async function downloadPet(pet, button, status) {
+  const originalLabel = button.textContent;
+  button.disabled = true;
+  button.textContent = `Preparing ${pet.name}…`;
+  status.textContent = "Downloading the two pet files and creating one ZIP…";
+
+  try {
+    const [manifestBytes, spritesheetBytes] = await Promise.all([
+      fetchPetFile(pet, "pet.json"),
+      fetchPetFile(pet, "spritesheet.webp")
+    ]);
+    const manifest = JSON.parse(new TextDecoder().decode(manifestBytes));
+    if (manifest.spriteVersionNumber !== 2 || manifest.spritesheetPath !== "spritesheet.webp" || !validWebp(spritesheetBytes)) {
+      throw new Error("The downloaded pet files failed validation");
+    }
+
+    const zipBytes = globalThis.CodexPetZip.createStoredZip([
+      { name: `${pet.id}/pet.json`, data: manifestBytes },
+      { name: `${pet.id}/spritesheet.webp`, data: spritesheetBytes }
+    ]);
+    const objectUrl = URL.createObjectURL(new Blob([zipBytes], { type: "application/zip" }));
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = `${pet.id}.zip`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+
+    button.textContent = "Downloaded";
+    status.textContent = `Saved ${pet.id}.zip to your Downloads folder.`;
+  } catch (error) {
+    button.textContent = "Try download again";
+    status.textContent = "The download failed. Check your connection and try again.";
+  } finally {
+    button.disabled = false;
+    window.setTimeout(() => {
+      if (button.textContent === "Downloaded") button.textContent = originalLabel;
+    }, 3000);
+  }
+}
+
 function renderHome(errorMessage) {
   const fragment = document.createDocumentFragment();
 
@@ -123,12 +183,15 @@ function renderInstaller(pet) {
   const eyebrow = element("p", "eyebrow", "Review before downloading");
   const heading = element("h1", "", pet.name);
   const description = element("p", "description", pet.description);
-  const safety = element("p", "safety-note", `The ZIP contains every published pet. After downloading it, copy the pets/${pet.id} folder into your Codex pets folder, then restart Codex.`);
+  const safety = element("p", "safety-note", `This downloads only ${pet.name}: one folder containing pet.json and spritesheet.webp. No other pets or repository files are included.`);
 
   const actions = element("div", "actions");
-  const download = element("a", "primary-button", "Download pet files (.zip)");
-  download.href = `${repository}/archive/refs/heads/main.zip`;
-  download.setAttribute("aria-label", `Download the repository ZIP containing ${pet.name}`);
+  const download = element("button", "primary-button", `Download ${pet.name} (.zip)`);
+  download.type = "button";
+  download.setAttribute("aria-label", `Download only ${pet.name} as a ZIP file`);
+  const downloadStatus = element("p", "download-status", "Only this pet will be downloaded.");
+  downloadStatus.setAttribute("aria-live", "polite");
+  download.addEventListener("click", () => downloadPet(pet, download, downloadStatus));
 
   const back = element("a", "text-link", "Choose another pet");
   back.href = "./";
@@ -140,44 +203,48 @@ function renderInstaller(pet) {
   guide.setAttribute("aria-labelledby", "install-guide-title");
   const guideTitle = element("h2", "", "After downloading");
   guideTitle.id = "install-guide-title";
-  const guideIntro = element("p", "guide-intro", "The ZIP includes all published pets. Install only the folder for the pet you selected.");
+  const guideIntro = element("p", "guide-intro", "You do not need to find the hidden .codex folder yourself. Let Codex open the correct folder for you.");
   const steps = element("ol", "install-steps");
 
-  const unzipStep = element("li", "", "Open the downloaded codex-pets-main.zip file to unzip it.");
-
-  const findStep = element("li");
-  findStep.append(
-    document.createTextNode("Inside the extracted folder, open pets and find "),
+  const unzipStep = element("li");
+  unzipStep.append(
+    document.createTextNode("Open "),
+    element("code", "", `${pet.id}.zip`),
+    document.createTextNode(" in your Downloads folder. It will reveal one folder named "),
     element("code", "", pet.id),
     document.createTextNode(".")
   );
 
-  const copyStep = element("li");
-  copyStep.append(document.createTextNode("Copy that entire folder into your Codex pets directory:"));
-  const platformPaths = element("ul", "platform-paths");
-  const macPath = element("li");
-  macPath.append(document.createTextNode("macOS / Linux: "), element("code", "", "~/.codex/pets"));
-  const windowsPath = element("li");
-  windowsPath.append(document.createTextNode("Windows: "), element("code", "", "%USERPROFILE%\\.codex\\pets"));
-  platformPaths.append(macPath, windowsPath);
-  copyStep.append(platformPaths);
+  const findStep = element("li", "", "In Codex, open Settings > Pets. Under Custom pets, select Open folder.");
 
-  const finishStep = element("li", "", "Restart Codex, open Settings > Pets, select the new pet, then enter /pet to wake it.");
+  const copyStep = element("li");
+  copyStep.append(
+    document.createTextNode("Drag the extracted "),
+    element("code", "", pet.id),
+    document.createTextNode(" folder into the folder Codex opened.")
+  );
+
+  const finishStep = element("li", "", "Return to Codex, select Refresh, choose the new pet, then enter /pet to wake it.");
   steps.append(unzipStep, findStep, copyStep, finishStep);
 
-  const guideNote = element("p", "guide-note");
-  guideNote.append(
-    document.createTextNode("If the pets directory does not exist, create it first. Do not copy the whole "),
-    element("code", "", "codex-pets-main"),
-    document.createTextNode(" folder into it.")
+  const advanced = element("details", "advanced-path");
+  const advancedTitle = element("summary", "", "If you do not see Open folder");
+  const advancedText = element("p");
+  advancedText.append(
+    document.createTextNode("On macOS, open Finder and press Command + Shift + G, then enter "),
+    element("code", "", "~/.codex/pets"),
+    document.createTextNode(". On Windows, paste "),
+    element("code", "", "%USERPROFILE%\\.codex\\pets"),
+    document.createTextNode(" into File Explorer's address bar. Create the pets folder inside .codex if it does not exist.")
   );
-  guide.append(guideTitle, guideIntro, steps, guideNote);
+  advanced.append(advancedTitle, advancedText);
+  guide.append(guideTitle, guideIntro, steps, advanced);
 
   const helperLinks = element("nav", "helper-links");
   helperLinks.setAttribute("aria-label", "Installer links");
   helperLinks.append(manual, back);
 
-  actions.append(download);
+  actions.append(download, downloadStatus);
   content.append(eyebrow, heading, description, safety, actions, guide, helperLinks);
   section.append(preview, content);
   app.replaceChildren(section);

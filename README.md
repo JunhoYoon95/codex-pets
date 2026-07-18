@@ -11,7 +11,7 @@ Pick a pet, download it, and let it keep you company while Codex works. No codin
 
 ## Choose your pet
 
-Open a pet's download page and choose **Download pet files (.zip)**. Then copy the selected pet folder into your Codex pets directory by following the instructions below.
+Open a pet's download page and press its **Download [pet name] (.zip)** button. The page creates a ZIP containing only that pet.
 
 | Pet | Preview | Download |
 | --- | --- | :---: |
@@ -27,44 +27,45 @@ Open a pet's download page and choose **Download pet files (.zip)**. Then copy t
 ## Quick start
 
 1. Click **Download / install** next to the pet you want.
-2. Press **Download pet files (.zip)**.
-3. Follow the [manual installation steps](#manual-installation) to copy the selected pet folder into the Codex pets directory.
-4. Restart Codex, then open your profile menu and select **Pets**. You can also open **Settings > Pets**.
-5. Select your new pet.
+2. Press **Download [pet name] (.zip)** and open the downloaded ZIP.
+3. In Codex, open **Settings > Pets**. Under **Custom pets**, select **Open folder**.
+4. Drag the extracted pet folder into the folder Codex opened.
+5. Return to Codex, select **Refresh**, and choose your new pet.
 6. Type `/pet` in a chat, or open the command menu and select **Wake Pet**.
 
 Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
 > [!TIP]
-> The ZIP contains every published pet, so you only need to copy the folder for the pet you want.
+> Each ZIP contains only the selected pet's `pet.json` and `spritesheet.webp` files.
 
 ## 한국어 빠른 설치
 
 1. 위 목록에서 원하는 펫의 **Download / install**을 눌러 다운로드 페이지를 엽니다.
-2. **Download pet files (.zip)**을 눌러 ZIP 파일을 받습니다.
-3. 아래의 [수동 설치](#manual-installation) 안내에 따라 원하는 펫 폴더를 Codex의 `pets` 폴더로 복사합니다.
-4. Codex를 재시작한 다음 프로필 메뉴의 **Pets** 또는 **Settings > Pets**로 이동합니다.
-5. 설치한 펫을 선택합니다.
+2. **Download [펫 이름] (.zip)**을 눌러 해당 펫만 받은 뒤 ZIP을 엽니다.
+3. Codex의 **Settings > Pets**에서 **Custom pets > Open folder**를 누릅니다.
+4. 압축을 풀어 나온 펫 폴더를 Codex가 열어준 폴더로 드래그합니다.
+5. Codex로 돌아가 **Refresh**를 누르고 설치한 펫을 선택합니다.
 6. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
 
-ZIP에는 공개된 모든 펫이 들어 있습니다. 아래의 [수동 설치](#manual-installation) 안내에 따라 원하는 펫 폴더 하나만 복사하면 됩니다. 터미널이나 개발 지식은 필요하지 않습니다.
+각 다운로드 페이지는 선택한 펫의 `pet.json`과 `spritesheet.webp`만 ZIP으로 묶어 내려받습니다. 터미널이나 개발 지식은 필요하지 않습니다.
 
 ## Manual installation
 
-Use this method if the **Install in Codex** link does not work.
+Each pet page downloads only the selected pet as its own ZIP file.
 
 ### Option A: Download the ZIP — no terminal required
 
-1. At the top of this GitHub page, click the green **Code** button, then **Download ZIP**.
-2. Unzip the downloaded `codex-pets-main.zip` file.
-3. Open the extracted `codex-pets-main/pets` folder.
-4. Copy the folder for the pet you want. For example, copy `white-no7-celebration`.
-5. Paste that folder into the Codex pets directory:
-   - **macOS:** In Finder, press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>, enter `~/.codex/pets`, and press Return.
-   - **Windows:** In File Explorer's address bar, enter `%USERPROFILE%\.codex\pets` and press Enter.
-   - If the `pets` folder does not exist, create it inside `.codex`.
-6. Restart the Codex app, or open a new Codex window.
-7. Open **Settings > Pets**, select the installed pet, and run `/pet` to wake it.
+1. Click **Download / install** next to the pet you want, then press its download button.
+2. Open the downloaded ZIP to reveal the pet folder.
+3. In Codex, open **Settings > Pets**. Under **Custom pets**, select **Open folder**.
+4. Drag the extracted pet folder into the folder Codex opened.
+5. Return to Codex, select **Refresh**, choose the installed pet, and run `/pet` to wake it.
+
+If **Open folder** is unavailable:
+
+- **macOS:** In Finder, press <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>, enter `~/.codex/pets`, and press Return.
+- **Windows:** In File Explorer's address bar, enter `%USERPROFILE%\.codex\pets` and press Enter.
+- If the `pets` folder does not exist, create it inside `.codex`.
 
 The final folder structure should look like this:
 
@@ -76,7 +77,7 @@ The final folder structure should look like this:
         └── spritesheet.webp
 ```
 
-Avoid an extra nested folder such as `pets/codex-pets-main/pets/white-no7-celebration`; Codex will not find the pet there.
+Make sure the downloaded pet folder sits directly inside `pets`; Codex will not find it inside an extra nested folder.
 
 ### Option B: Terminal
 
