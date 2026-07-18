@@ -55,13 +55,9 @@ function petAsset(pet, filename) {
 }
 
 function installUrl(pet) {
-  const params = new URLSearchParams({
-    name: pet.name,
-    imageUrl: petAsset(pet, "spritesheet.webp"),
-    description: pet.description,
-    spriteVersionNumber: "2"
-  });
-  return `codex://pets/install?${params.toString()}`;
+  const name = encodeURIComponent(pet.name);
+  const imageUrl = encodeURIComponent(petAsset(pet, "spritesheet.webp"));
+  return `codex://pets/install?name=${name}&imageUrl=${imageUrl}&spriteVersionNumber=2`;
 }
 
 function element(tag, className, text) {
@@ -145,8 +141,28 @@ function renderInstaller(pet) {
 
   const manual = element("a", "text-link", "Manual installation help");
   manual.href = `${repository}#manual-installation`;
+
+  const afterLaunch = element("section", "after-launch");
+  afterLaunch.hidden = true;
+  afterLaunch.setAttribute("aria-live", "polite");
+  const fallbackTitle = element("h2", "", "Codex opened, but no install dialog?");
+  const fallbackText = element("p", "", "Shared pet installation is not enabled for every app version, account, or workspace yet. The website cannot override that app setting. You can still install the pet from the repository ZIP.");
+  const fallbackLinks = element("div", "fallback-links");
+  const download = element("a", "text-link", "Download repository ZIP");
+  download.href = `${repository}/archive/refs/heads/main.zip`;
+  const instructions = element("a", "text-link", "Open step-by-step instructions");
+  instructions.href = `${repository}#manual-installation`;
+  fallbackLinks.append(download, instructions);
+  afterLaunch.append(fallbackTitle, fallbackText, fallbackLinks);
+
+  install.addEventListener("click", () => {
+    window.setTimeout(() => {
+      afterLaunch.hidden = false;
+    }, 700);
+  });
+
   actions.append(install, back);
-  content.append(eyebrow, heading, description, safety, actions, manual);
+  content.append(eyebrow, heading, description, safety, actions, manual, afterLaunch);
   section.append(preview, content);
   app.replaceChildren(section);
   document.title = `${pet.name} — Codex Pets`;

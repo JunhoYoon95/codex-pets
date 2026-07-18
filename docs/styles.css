@@ -213,6 +213,36 @@ h2 {
   gap: 12px;
 }
 
+.after-launch {
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid #4c5a2d;
+  border-radius: 14px;
+  background: rgba(215, 255, 100, 0.06);
+}
+
+.after-launch[hidden] {
+  display: none;
+}
+
+.after-launch h2 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.after-launch p {
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.fallback-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .primary-button {
   padding: 0 24px;
   color: var(--accent-ink);

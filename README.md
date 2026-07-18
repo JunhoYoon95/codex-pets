@@ -8,10 +8,11 @@ Pick a pet, install it, and let it keep you company while Codex works. No coding
 
 > [!IMPORTANT]
 > You need a version of the Codex/ChatGPT desktop app that includes **Settings > Pets**. Pet availability can depend on your app version, account, or workspace.
+> One-click shared pet installation is also a separately enabled feature. If Codex opens without an install dialog, use the manual installation option.
 
 ## Choose your pet
 
-Click **Install** next to a pet. A review page will open first; Codex opens only after you press **Open in Codex**.
+Click **Install** next to a pet. A review page will open first; Codex opens only after you press **Open in Codex**. If shared pet installation is not enabled for your app or account, the page provides a reliable ZIP fallback.
 
 | Pet | Preview | Install |
 | --- | --- | :---: |
