@@ -27,11 +27,12 @@ Open a pet's download page and press its **Download [pet name] (.zip)** button. 
 ## Quick start
 
 1. Click **Download / install** next to the pet you want.
-2. Press **Download [pet name] (.zip)** and open the downloaded ZIP.
-3. In Codex, open **Settings > Pets**. Under **Custom pets**, select **Open folder**.
-4. Drag the extracted pet folder into the folder Codex opened.
-5. Return to Codex, select **Refresh**, and choose your new pet.
-6. Type `/pet` in a chat, or open the command menu and select **Wake Pet**.
+2. Press **Download [pet name] (.zip)**. Find the ZIP in Downloads and open it to extract the pet folder.
+3. Open the Codex app and go to **Settings > Pets**.
+4. Scroll down to **Custom pets** and select **Open folder**.
+5. Move the extracted pet folder into the folder Codex opened.
+6. Return to the pet list. The new pet should appear automatically; if it does not, select **Refresh**.
+7. Select the new pet and type `/pet`, or open the command menu and select **Wake Pet**.
 
 Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 
@@ -41,11 +42,12 @@ Run `/pet` again or select **Tuck Away Pet** when you want to hide it.
 ## 한국어 빠른 설치
 
 1. 위 목록에서 원하는 펫의 **Download / install**을 눌러 다운로드 페이지를 엽니다.
-2. **Download [펫 이름] (.zip)**을 눌러 해당 펫만 받은 뒤 ZIP을 엽니다.
-3. Codex의 **Settings > Pets**에서 **Custom pets > Open folder**를 누릅니다.
-4. 압축을 풀어 나온 펫 폴더를 Codex가 열어준 폴더로 드래그합니다.
-5. Codex로 돌아가 **Refresh**를 누르고 설치한 펫을 선택합니다.
-6. 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
+2. **Download [펫 이름] (.zip)**을 누릅니다. Downloads 폴더에서 받은 ZIP을 열어 압축을 풉니다.
+3. Codex 앱을 열고 **Settings > Pets**로 이동합니다.
+4. 아래로 스크롤하여 **Custom pets**에서 **Open folder**를 누릅니다.
+5. 방금 압축을 풀어둔 펫 폴더를 Codex가 열어준 폴더 안으로 옮깁니다.
+6. Codex의 펫 목록으로 돌아갑니다. 새 펫이 보이지 않으면 **Refresh**를 누릅니다.
+7. 새 펫을 선택한 뒤 채팅에 `/pet`을 입력하거나 명령 메뉴에서 **Wake Pet**을 선택합니다.
 
 각 다운로드 페이지는 선택한 펫의 `pet.json`과 `spritesheet.webp`만 ZIP으로 묶어 내려받습니다. 터미널이나 개발 지식은 필요하지 않습니다.
 
@@ -56,10 +58,12 @@ Each pet page downloads only the selected pet as its own ZIP file.
 ### Option A: Download the ZIP — no terminal required
 
 1. Click **Download / install** next to the pet you want, then press its download button.
-2. Open the downloaded ZIP to reveal the pet folder.
-3. In Codex, open **Settings > Pets**. Under **Custom pets**, select **Open folder**.
-4. Drag the extracted pet folder into the folder Codex opened.
-5. Return to Codex, select **Refresh**, choose the installed pet, and run `/pet` to wake it.
+2. Find the ZIP in Downloads and open it to extract the pet folder.
+3. Open Codex and go to **Settings > Pets**.
+4. Scroll down to **Custom pets** and select **Open folder**.
+5. Move the extracted pet folder into the folder Codex opened.
+6. Return to the pet list. If the new pet is not visible, select **Refresh**.
+7. Choose the installed pet and run `/pet` to wake it.
 
 If **Open folder** is unavailable:
 

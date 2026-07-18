@@ -203,19 +203,28 @@ function renderInstaller(pet) {
   guide.setAttribute("aria-labelledby", "install-guide-title");
   const guideTitle = element("h2", "", "After downloading");
   guideTitle.id = "install-guide-title";
-  const guideIntro = element("p", "guide-intro", "You do not need to find the hidden .codex folder yourself. Let Codex open the correct folder for you.");
+  const guideIntro = element("p", "guide-intro", "The ZIP is saved to your Downloads folder. Extract it first, then let Codex open the correct hidden folder for you.");
   const steps = element("ol", "install-steps");
 
   const unzipStep = element("li");
   unzipStep.append(
-    document.createTextNode("Open "),
+    document.createTextNode("In your Downloads folder, open "),
     element("code", "", `${pet.id}.zip`),
-    document.createTextNode(" in your Downloads folder. It will reveal one folder named "),
+    document.createTextNode(" to extract it. Keep the folder named "),
     element("code", "", pet.id),
     document.createTextNode(".")
   );
 
-  const findStep = element("li", "", "In Codex, open Settings > Pets. Under Custom pets, select Open folder.");
+  const settingsStep = element("li", "", "Open the Codex app, then go to Settings > Pets.");
+
+  const findStep = element("li");
+  findStep.append(
+    document.createTextNode("Scroll down to "),
+    element("strong", "", "Custom pets"),
+    document.createTextNode(", then select "),
+    element("strong", "", "Open folder"),
+    document.createTextNode(". Codex will open the correct pet folder for you.")
+  );
 
   const copyStep = element("li");
   copyStep.append(
@@ -224,8 +233,13 @@ function renderInstaller(pet) {
     document.createTextNode(" folder into the folder Codex opened.")
   );
 
-  const finishStep = element("li", "", "Return to Codex, select Refresh, choose the new pet, then enter /pet to wake it.");
-  steps.append(unzipStep, findStep, copyStep, finishStep);
+  const finishStep = element("li");
+  finishStep.append(
+    document.createTextNode("Return to the pet list in Codex. The new pet should appear automatically. If it does not, select "),
+    element("strong", "", "Refresh"),
+    document.createTextNode(", then choose the pet and enter /pet to wake it.")
+  );
+  steps.append(unzipStep, settingsStep, findStep, copyStep, finishStep);
 
   const advanced = element("details", "advanced-path");
   const advancedTitle = element("summary", "", "If you do not see Open folder");
