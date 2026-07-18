@@ -136,9 +136,49 @@ function renderInstaller(pet) {
   const manual = element("a", "text-link", "How to install the downloaded ZIP");
   manual.href = `${repository}#manual-installation`;
 
+  const guide = element("section", "install-guide");
+  guide.setAttribute("aria-labelledby", "install-guide-title");
+  const guideTitle = element("h2", "", "After downloading");
+  guideTitle.id = "install-guide-title";
+  const guideIntro = element("p", "guide-intro", "The ZIP includes all published pets. Install only the folder for the pet you selected.");
+  const steps = element("ol", "install-steps");
+
+  const unzipStep = element("li", "", "Open the downloaded codex-pets-main.zip file to unzip it.");
+
+  const findStep = element("li");
+  findStep.append(
+    document.createTextNode("Inside the extracted folder, open pets and find "),
+    element("code", "", pet.id),
+    document.createTextNode(".")
+  );
+
+  const copyStep = element("li");
+  copyStep.append(document.createTextNode("Copy that entire folder into your Codex pets directory:"));
+  const platformPaths = element("ul", "platform-paths");
+  const macPath = element("li");
+  macPath.append(document.createTextNode("macOS / Linux: "), element("code", "", "~/.codex/pets"));
+  const windowsPath = element("li");
+  windowsPath.append(document.createTextNode("Windows: "), element("code", "", "%USERPROFILE%\\.codex\\pets"));
+  platformPaths.append(macPath, windowsPath);
+  copyStep.append(platformPaths);
+
+  const finishStep = element("li", "", "Restart Codex, open Settings > Pets, select the new pet, then enter /pet to wake it.");
+  steps.append(unzipStep, findStep, copyStep, finishStep);
+
+  const guideNote = element("p", "guide-note");
+  guideNote.append(
+    document.createTextNode("If the pets directory does not exist, create it first. Do not copy the whole "),
+    element("code", "", "codex-pets-main"),
+    document.createTextNode(" folder into it.")
+  );
+  guide.append(guideTitle, guideIntro, steps, guideNote);
+
+  const helperLinks = element("nav", "helper-links");
+  helperLinks.setAttribute("aria-label", "Installer links");
+  helperLinks.append(manual, back);
+
   actions.append(download);
-  content.append(eyebrow, heading, description, safety, actions, manual);
-  content.append(back);
+  content.append(eyebrow, heading, description, safety, actions, guide, helperLinks);
   section.append(preview, content);
   app.replaceChildren(section);
   document.title = `${pet.name} — Codex Pets`;
